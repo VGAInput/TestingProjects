@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class SteamAPIAndOptional {
@@ -61,7 +63,10 @@ public class SteamAPIAndOptional {
         exampleIntList.add(0);
         exampleIntList.add(100);
 
-        exampleIntList.removeIf((Integer e) -> e % 2 == 1);
+        exampleIntList.stream().map(n -> n % 2 == 0).collect(Collectors.toList());
+
         System.out.println(exampleIntList);
+
     }
+
 }
